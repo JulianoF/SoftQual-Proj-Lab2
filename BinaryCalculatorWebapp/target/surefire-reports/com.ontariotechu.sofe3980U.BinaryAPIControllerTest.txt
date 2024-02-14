@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.ontariotechu.sofe3980U.BinaryAPIControllerTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.307 s <<< FAILURE! - in com.ontariotechu.sofe3980U.BinaryAPIControllerTest
-or2(com.ontariotechu.sofe3980U.BinaryAPIControllerTest)  Time elapsed: 0.027 s  <<< FAILURE!
-java.lang.AssertionError: JSON path "$.operand2" expected:<65> but was:<101>
-	at com.ontariotechu.sofe3980U.BinaryAPIControllerTest.or2(BinaryAPIControllerTest.java:92)
-
-and2(com.ontariotechu.sofe3980U.BinaryAPIControllerTest)  Time elapsed: 0.025 s  <<< FAILURE!
-java.lang.AssertionError: JSON path "$.operand2" expected:<72> but was:<110>
-	at com.ontariotechu.sofe3980U.BinaryAPIControllerTest.and2(BinaryAPIControllerTest.java:83)
-
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.397 s - in com.ontariotechu.sofe3980U.BinaryAPIControllerTest

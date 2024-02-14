@@ -57,6 +57,7 @@ public class BinaryAPIControllerTest {
             .andExpect(status().isOk())
             .andExpect(content().string("1111"));
     }
+
 	@Test
     public void add2() throws Exception {
         this.mvc.perform(get("/add_json").param("operand1","111").param("operand2","1010"))//.andDo(print())
@@ -66,6 +67,7 @@ public class BinaryAPIControllerTest {
 			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10001))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("add"));
     }
+
     @Test
     public void multiply2() throws Exception {
         this.mvc.perform(get("/multiply_json").param("operand1","111").param("operand2","101"))//.andDo(print())
@@ -75,21 +77,23 @@ public class BinaryAPIControllerTest {
 			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(100011))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("multiply"));
     }
+
     @Test
     public void and2() throws Exception {
         this.mvc.perform(get("/and_json").param("operand1","1001").param("operand2","0110"))//.andDo(print())
             .andExpect(status().isOk())
             .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(1001))
-			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(0110))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(110))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(0000))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("and"));
     }
+
     @Test
     public void or2() throws Exception {
         this.mvc.perform(get("/or_json").param("operand1","1010").param("operand2","0101"))//.andDo(print())
             .andExpect(status().isOk())
             .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(1010))
-			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(0101))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(101))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(1111))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("or"));
     }

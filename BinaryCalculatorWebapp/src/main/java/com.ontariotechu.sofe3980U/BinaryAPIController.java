@@ -17,6 +17,7 @@ public class BinaryAPIController {
         return  Binary.add(number1,number2).getValue();
 		// http://localhost:8080/add?operand1=111&operand2=1010
 	}
+
 	@GetMapping("/multiply")
 	public String multiplyString(@RequestParam(name="operand1", required=false, defaultValue="") String operand1,
                        @RequestParam(name="operand2", required=false, defaultValue="") String operand2) {
@@ -25,6 +26,7 @@ public class BinaryAPIController {
         return  Binary.multiplyBinary(number1,number2).getValue();
 		// http://localhost:8080/multiply?operand1=111&operand2=1010
 	}
+
 	@GetMapping("/or")
 	public String orString(@RequestParam(name="operand1", required=false, defaultValue="") String operand1,
                        @RequestParam(name="operand2", required=false, defaultValue="") String operand2) {
@@ -33,6 +35,7 @@ public class BinaryAPIController {
         return  Binary.or(number1,number2).getValue();
 		// http://localhost:8080/or?operand1=111&operand2=1010
 	}
+	
 	@GetMapping("/and")
 	public String andString(@RequestParam(name="operand1", required=false, defaultValue="") String operand1,
                        @RequestParam(name="operand2", required=false, defaultValue="") String operand2) {
@@ -50,6 +53,7 @@ public class BinaryAPIController {
         return  new BinaryAPIResult(number1,"add",number2,Binary.add(number1,number2));
 		// http://localhost:8080/add?operand1=111&operand2=1010
 	}
+
 	@GetMapping("/multiply_json")
 	public BinaryAPIResult multiplyJSON(@RequestParam(name="operand1", required=false, defaultValue="") String operand1,
                        @RequestParam(name="operand2", required=false, defaultValue="") String operand2) {
@@ -58,6 +62,7 @@ public class BinaryAPIController {
         return  new BinaryAPIResult(number1,"multiply",number2,Binary.multiplyBinary(number1,number2));
 		// http://localhost:8080/multiply?operand1=111&operand2=1010
 	}
+
 	@GetMapping("/or_json")
 	public BinaryAPIResult orJSON(@RequestParam(name="operand1", required=false, defaultValue="") String operand1,
                        @RequestParam(name="operand2", required=false, defaultValue="") String operand2) {
@@ -66,6 +71,7 @@ public class BinaryAPIController {
         return  new BinaryAPIResult(number1,"or",number2,Binary.or(number1,number2));
 		// http://localhost:8080/or?operand1=111&operand2=1010
 	}
+
 	@GetMapping("/and_json")
 	public BinaryAPIResult andJSON(@RequestParam(name="operand1", required=false, defaultValue="") String operand1,
                        @RequestParam(name="operand2", required=false, defaultValue="") String operand2) {
